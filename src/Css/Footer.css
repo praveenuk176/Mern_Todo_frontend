@@ -1,0 +1,54 @@
+.con{
+    background-color: hsl(157, 86%, 14%);
+    padding: 20px;
+    justify-content: center;
+}
+
+#foot{
+    color: whitesmoke;
+    text-align: center
+}
+.instagram-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; 
+    font-weight: bold;
+    color: whitesmoke;
+  }
+  
+.instagram-link:hover {
+    text-decoration: underline;   
+  }
+
+.foot2{
+    padding-left: 600px;
+}
+.icon-container {
+  display: flex;
+  justify-content: center; 
+}
+
+
+.icon {
+  display: inline-table;
+  margin-right: 10px; 
+  color: whitesmoke;
+}
+.linkedin-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; 
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.youtube-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; 
+  font-weight: bold;
+  color: whitesmoke;
+}

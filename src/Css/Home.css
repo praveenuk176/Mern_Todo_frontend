@@ -1,0 +1,40 @@
+
+
+.container5{
+    background-image: url('https://img.freepik.com/free-vector/soft-yellow-watercolor-texture-background_1055-10236.jpg?w=740&t=st=1713528321~exp=1713528921~hmac=a09f5f3cd6fef2f1d213128710831bda6b64d42065b360dfe471d6be175273e2');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 600px;
+    
+}
+
+#he5{
+    color: rgb(76, 8, 8);
+    text-align: center;
+    padding: 10px;
+}
+
+#p5{
+    color: rgb(124, 13, 13);
+    align-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.container6{
+    padding: 20px;
+    border: 2px solid maroon;
+}
+#he6{
+    color: rgb(76, 8, 8);
+    text-align: center;
+    padding-top: 10px;
+}
+
+#he7{
+    color: blue;
+    text-align: center;
+    
+}

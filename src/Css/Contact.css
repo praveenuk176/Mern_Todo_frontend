@@ -1,0 +1,87 @@
+.container9{
+    background-image: url('https://img.freepik.com/free-vector/soft-yellow-watercolor-texture-background_1055-10236.jpg?w=740&t=st=1713528321~exp=1713528921~hmac=a09f5f3cd6fef2f1d213128710831bda6b64d42065b360dfe471d6be175273e2');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 600px;
+
+}
+.container11{
+    padding-top: 50px;
+    align-content: center;
+    padding-left: 400px;
+    padding-right: 400px;
+}
+
+.container10{
+    border: 2px solid hsl(157, 86%, 14%); ;
+    text-align: center;
+    border-radius: 60px;
+    
+}
+
+.container12{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+
+}
+
+.container13{
+    flex: 1;
+    background-color: rgba(207, 180, 89, 0.634);
+    padding: 10px;
+    border-radius: 50px;
+    color: hsl(157, 86%, 14%);
+    text-align: center;
+}
+
+.container14{
+    flex: 1;
+    background-color: rgba(207, 180, 89, 0.634);
+    padding: 10px;
+    border-radius: 50px;
+    color: hsl(157, 86%, 14%);
+    text-align: center;
+}
+
+.container15{
+    flex: 1;
+    background-color: rgba(207, 180, 89, 0.634);
+    padding: 10px;
+    border-radius: 50px;
+    color: hsl(157, 86%, 14%);
+    text-align: center;
+}
+
+.container16 {
+    text-align: center;
+    padding: 50px;
+}
+
+.container16 h2 {
+    color: hsl(157, 86%, 14%);
+    margin-bottom: 20px;
+}
+
+.container16 p {
+    color: hsl(157, 86%, 14%);
+    margin-bottom: 30px;
+}
+
+.container16 a {
+    display: inline-block;
+    background-color: hsl(157, 86%, 14%);
+    color: hsl(0, 0%, 100%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.container16 a:hover {
+    background-color: hsl(157, 76%, 24%);
+}
