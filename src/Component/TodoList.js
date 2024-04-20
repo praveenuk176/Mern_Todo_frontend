@@ -14,7 +14,7 @@ const TodoList = () => {
   }, []);
 
   function handlePost() {
-    axios.post('http://localhost:5000/posting', { name, age, course })
+    axios.post('https://mern-todo-backend-c6a2.onrender.com/posting', { name, age, course })
       .then(() => {
         alert('Data has been posted');
         setName('');
@@ -27,7 +27,7 @@ const TodoList = () => {
   }
 
   function getData() {
-    axios.get('http://localhost:5000/posting')
+    axios.get('https://mern-todo-backend-c6a2.onrender.com/posting')
       .then((response) => {
         setTodo(response.data);
       })
@@ -37,7 +37,7 @@ const TodoList = () => {
   }
 
   function updateTodo(id, updatedObject) {
-    axios.put(`http://localhost:5000/posting/${id}`, updatedObject)
+    axios.put(`https://mern-todo-backend-c6a2.onrender.com/posting/${id}`, updatedObject)
       .then(() => {
         alert('Data has been updated');
         getData();
@@ -49,7 +49,7 @@ const TodoList = () => {
   }
 
   function deleteTodo(id) {
-    axios.delete(`http://localhost:5000/posting/${id}`)
+    axios.delete(`https://mern-todo-backend-c6a2.onrender.com/posting/${id}`)
       .then(() => {
         alert('Data has been deleted');
         getData();
