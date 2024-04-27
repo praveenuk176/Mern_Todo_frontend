@@ -1,0 +1,51 @@
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    text-align: center;
+    background-color: white;
+}
+
+h1 {
+    color:hsl(157, 86%, 14%);;
+}
+
+input[type="email"],
+input[type="password"],
+.login-button {
+    display: block;
+    width: calc(100% - 20px); /* Subtract padding */
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.login-button {
+    background-color: hsl(157, 86%, 14%);
+    color: white;
+    display: inline-block;
+    width: calc(100%); /* Subtract padding */
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: hsl(157, 86%, 14%);
+}
+
+.divider {
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.signup-link {
+    text-decoration: none;
+    color: hsl(157, 86%, 14%);
+    font-weight: bold;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}

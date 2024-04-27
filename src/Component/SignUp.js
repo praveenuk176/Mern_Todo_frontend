@@ -1,60 +1,49 @@
-import axios from 'axios'
-import React, { useState } from 'react'
-import{Link, useNavigate} from 'react-router-dom'
+import axios from 'axios';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import '../Css/Login.css'; // Import CSS file for styling
 
-const SignUp = () => {
+const SignUp = ({ setIsAuthenticated }) => {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-  const history= useNavigate()
-  const[email,setEmail]=useState('')
-  const[password,setPassword]=useState('')
+    async function submit(e) {
+        e.preventDefault();
 
-async function submit(e){
-  e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:5000/signup', {
+                email,
+                password
+            });
 
-  try{
-      await axios.post('http://localhost:5000/signup',{
-          email,password
-        })
-
-          .then(res=>{
-            if(res.data=="exist"){
-              alert("User already Exist")  
-              history("/home")
+            if (response.data === "exist") {
+                alert("User already exists. Please log in.");
+                navigate("/"); // Redirect to login page
+            } else {
+                alert("Signup successful. Please log in.");
+                navigate("/"); // Redirect to login page
             }
-            else if(res.data=="not exist"){
-                alert("User have not sign up")
-            }
-          })
-    
-          .catch(e=>{
-              alert("wrong details")
-              console.log(e);
-          })
-      
-  }
-  catch(e){
-      console.log(e);
-  }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Something went wrong. Please try again.");
+        }
+    }
+
+    return (
+        <div className='login-container'>
+            <h1>Signup</h1>
+            <form onSubmit={submit}>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                <button type="submit" className="login-button">Sign Up</button>
+            </form>
+            <br />
+            <p>OR</p>
+            <br />
+            <Link to="/" className="signup-link">Login Page</Link>
+        </div>
+    );
 }
 
-  return (
-    <div className='login'>
-    <h1>Signup</h1>
-    <form action='POST'>
-        <input type="email" onChange={(e)=>(setEmail(e.target.value))} placeholder="Email" id=""></input>
-        <input type="password" onChange={(e)=>(setPassword(e.target.value))} placeholder="Password" id=""></input>
-        <input type="submit"  onClick={submit}/>
-    </form>
-    <br />
-    <p>OR</p>
-    <br />
-
-    <Link to="/">Login Page</Link>
-
-
-
-</div>
-  )
-}
-
-export default SignUp
+export default SignUp;

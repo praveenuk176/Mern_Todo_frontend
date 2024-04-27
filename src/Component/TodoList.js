@@ -7,6 +7,7 @@ const TodoList = () => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [course, setCourse] = useState('');
+  const [mobile, setMobile] = useState('');
   const [todo, setTodo] = useState([]);
 
   useEffect(() => {
@@ -14,12 +15,13 @@ const TodoList = () => {
   }, []);
 
   function handlePost() {
-    axios.post('https://mern-todo-backend-c6a2.onrender.com/posting', { name, age, course })
+    axios.post('https://mern-todo-backend-1.onrender.com/posting', { name, age, course, mobile })
       .then(() => {
-        alert('Data has been posted');
+        alert('Thank you for your submission. We will contact you shortly.');
         setName('');
         setAge('');
         setCourse('');
+        setMobile('');
       })
       .catch(() => {
         alert('Data has not been posted');
@@ -27,17 +29,17 @@ const TodoList = () => {
   }
 
   function getData() {
-    axios.get('https://mern-todo-backend-c6a2.onrender.com/posting')
+    axios.get('https://mern-todo-backend-1.onrender.com/posting')
       .then((response) => {
         setTodo(response.data);
       })
-      .catch(() => {
+      .catch(() => { 
         alert('Content retrieval Failed');
       });
   }
 
   function updateTodo(id, updatedObject) {
-    axios.put(`https://mern-todo-backend-c6a2.onrender.com/posting/${id}`, updatedObject)
+    axios.put(`https://mern-todo-backend-1.onrender.com/posting/${id}`, updatedObject)
       .then(() => {
         alert('Data has been updated');
         getData();
@@ -49,7 +51,7 @@ const TodoList = () => {
   }
 
   function deleteTodo(id) {
-    axios.delete(`https://mern-todo-backend-c6a2.onrender.com/posting/${id}`)
+    axios.delete(`https://mern-todo-backend-1.onrender.com/posting/${id}`)
       .then(() => {
         alert('Data has been deleted');
         getData();
@@ -73,27 +75,29 @@ const TodoList = () => {
       height: '600px',
     }}>
       <h1 style={{ marginBottom: '20px', color: 'hsl(157, 86%, 14%)', fontSize: '24px', fontWeight: 'bold' }}>Todo List Management</h1>
-      <div style={{ marginBottom: '10px', padding: '10px', border: '1px solid hsl(157, 86%, 14%)', borderRadius: '5px', width: '450px', backgroundColor: 'whitesmoke' }}>
+      <div style={{ marginBottom: '10px', padding: '10px', border: '1px solid hsl(157, 86%, 14%)', borderRadius: '5px', width: '450px', backgroundColor: 'rgb(244, 220, 146)' }}>
         <TextField id="outlined-basic" label="Name" variant="outlined" value={name} onChange={(e) => setName(e.target.value)} style={{ marginBottom: '10px', width: '100%' }} />
         <TextField id="outlined-basic" label="Age" variant="outlined" value={age} onChange={(e) => setAge(e.target.value)} style={{ marginBottom: '10px', width: '100%' }} />
         <TextField id="outlined-basic" label="Course" variant="outlined" value={course} onChange={(e) => setCourse(e.target.value)} style={{ marginBottom: '10px', width: '100%' }} />
+        <TextField id="outlined-basic" label="Mobile Number" variant="outlined" value={mobile} onChange={(e) => setMobile(e.target.value)} style={{ marginBottom: '10px', width: '100%' }} />
         <Button variant="contained" style={{ backgroundColor: 'hsl(157, 86%, 14%)', color: 'white', fontSize: '12px', marginRight: '10px' }} onClick={handlePost}>Add</Button>
         <Button variant="contained" style={{ backgroundColor: 'hsl(157, 86%, 14%)', color: 'white', fontSize: '12px' }} onClick={getData}>Get All</Button>
       </div>
       <ol style={{ listStyleType: 'none', padding: 0 }}>
         {todo.map((item) => (
-          <li key={item._id} style={{ marginBottom: '10px', padding: '10px', border: '1px solid hsl(157, 86%, 14%)', borderRadius: '5px', width: '450px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div>Name: {item.name} | Age: {item.age} | Course: {item.course}</div>
+          <li key={item._id} style={{ marginBottom: '10px', padding: '10px', border: '1px solid hsl(157, 86%, 14%)', borderRadius: '5px', width: '600px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div>Name: {item.name} | Age: {item.age} | Course: {item.course} | Mobile: {item.mobile}</div>
             <div>
               <Button variant="contained" style={{ backgroundColor: 'green', color: 'white', fontSize: '12px', marginRight: '10px' , marginLeft: '10px'}} onClick={() => {
                 const newName = prompt('Enter the new Name');
                 const newAge = prompt('Enter the new age');
                 const newCourse = prompt('Enter the new Course');
+                const newMobileNumber = prompt('Enter the new Mobile Number');
 
                 if (newName === null) {
                   alert('Please enter new data');
                 } else {
-                  const updatedObject = { name: newName, age: newAge, course: newCourse };
+                  const updatedObject = { name: newName, age: newAge, course: newCourse, mobile: newMobileNumber };
                   updateTodo(item._id, updatedObject);
                 }
               }}>Edit</Button>

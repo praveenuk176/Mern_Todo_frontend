@@ -16,7 +16,7 @@ const Home = () => {
  </div>
       <div className='container7'>
         <h3 id='he6'>For more details about our Courses</h3>
-        <h4 id='he7'>Login here</h4>
+        <h4 id='he7'>Please fill TodoList Form | We will contact you Soon</h4>
 
       </div>
     </div>

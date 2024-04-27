@@ -12,7 +12,7 @@ const Footer = () => {
         <span className="icon"><a href="https://in.linkedin.com/in/praveen-palanisamy-90086525a" className="linkedin-link"><LinkedIn /></a></span>
         <span className="icon"><a href="https://www.youtube.com/channel/UCi1mshqTRUzqS6xLIVuvoJg" className="youtube-link"><YouTube /></a></span>
         </div>
-        <h3 id='foot'>Contact Email: praveenuk@gmail.com<br></br>
+        <h3 id='foot'>Contact Email: praveenuk176@gmail.com<br></br>
         Mobile: +91 8610 510 254 </h3>
     </div>
     </div>

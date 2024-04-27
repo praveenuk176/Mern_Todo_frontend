@@ -21,14 +21,14 @@ const Contact = () => {
         </div>
         <div className='container15'>
         <h4>✉️ Email</h4>
-      <h5>praveenuk@gmail.com</h5>
+      <h5>praveenuk176@gmail.com</h5>
         </div>
       </div>
 
       <div class="container16">
     <h2>Get in Touch</h2>
     <p>Have a question or inquiry? Feel free to reach out!</p>
-    <a href="mailto:praveenuk.email@example.com">Send Email</a>
+    <a href="mailto:praveenuk176.email@example.com">Send Email</a>
 </div>
 
     </div>
